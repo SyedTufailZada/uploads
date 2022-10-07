@@ -1,27 +1,19 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Linux (x86_64)
+-- MySQL dump 10.14  Distrib 5.5.68-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: factorflow_prod_db
+-- Host: aws-ec2-database.cyxpeevzvuth.us-east-1.rds.amazonaws.com    Database: factorflow_prod_db
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
-SET @@SESSION.SQL_LOG_BIN= 0;
-
---
--- GTID state at the beginning of the backup 
---
-
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
 -- Table structure for table `client_advocate_clients`
@@ -29,7 +21,7 @@ SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 DROP TABLE IF EXISTS `client_advocate_clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `client_advocate_clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
@@ -59,7 +51,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `client_attachments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `client_attachments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `client_id` bigint unsigned NOT NULL,
@@ -90,7 +82,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `client_department_documents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `client_department_documents` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `client_department_id` bigint unsigned NOT NULL,
@@ -121,7 +113,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `client_departments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `client_departments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -150,7 +142,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `company_business_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -241,7 +233,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clients_terms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients_terms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `client_id` bigint unsigned NOT NULL,
@@ -276,7 +268,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `collection_documents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `collection_documents` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `collection_id` bigint unsigned NOT NULL,
@@ -307,7 +299,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `collection_invoices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `collection_invoices` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `invoice_id` bigint unsigned NOT NULL,
@@ -337,7 +329,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `collection_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `collection_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
@@ -364,7 +356,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `collections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `collections` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -399,7 +391,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `credit_requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `credit_requests` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned DEFAULT NULL,
@@ -428,7 +420,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `debtor_pocs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `debtor_pocs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `debtor_id` bigint unsigned NOT NULL,
@@ -465,7 +457,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `debtors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `debtors` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -513,7 +505,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `debtors_terms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `debtors_terms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `client_id` bigint unsigned NOT NULL,
@@ -551,7 +543,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `escrow_reserve_releases`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `escrow_reserve_releases` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -580,7 +572,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -609,7 +601,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invoice_attachment_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoice_attachment_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `invoice_attachment_id` bigint unsigned NOT NULL,
@@ -637,7 +629,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invoice_attachments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoice_attachments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `invoice_id` bigint unsigned NOT NULL,
@@ -666,7 +658,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoices` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -739,7 +731,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -764,7 +756,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `notifications`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `notifications` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
@@ -799,7 +791,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `account_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -832,7 +824,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `personal_access_tokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -864,7 +856,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect8821_forms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect8821_forms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -893,7 +885,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_attachment_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_attachment_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_attachment_id` bigint unsigned NOT NULL,
@@ -923,7 +915,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_attachments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_attachments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` int NOT NULL,
@@ -952,7 +944,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_contracts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_contracts` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -988,7 +980,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_noas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_noas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -1016,7 +1008,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_owners`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_owners` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` int NOT NULL,
@@ -1059,7 +1051,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_suppliers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_suppliers` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` int NOT NULL,
@@ -1091,7 +1083,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_support_attachments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_support_attachments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint NOT NULL,
@@ -1133,7 +1125,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_term_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_term_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_term_sheets_id` bigint unsigned NOT NULL,
@@ -1165,7 +1157,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_term_sheets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_term_sheets` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -1228,7 +1220,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospect_w9_forms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_w9_forms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -1258,7 +1250,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prospects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospects` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `company_business_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1352,7 +1344,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `quality_control_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quality_control_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
@@ -1384,7 +1376,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `quality_control_users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quality_control_users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `quality_control_id` bigint unsigned NOT NULL,
@@ -1413,7 +1405,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `quality_controls`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quality_controls` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `type_id` bigint NOT NULL,
@@ -1443,7 +1435,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `reserve_releases`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reserve_releases` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint NOT NULL,
@@ -1473,7 +1465,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `schedule_documents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_documents` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `schedule_id` bigint unsigned NOT NULL,
@@ -1504,7 +1496,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `schedules`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedules` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint unsigned NOT NULL,
@@ -1535,7 +1527,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `terms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `terms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `description` text COLLATE utf8mb4_unicode_ci,
@@ -1564,7 +1556,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ticket_responses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ticket_responses` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `ticket_id` int NOT NULL,
@@ -1592,7 +1584,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tickets` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
@@ -1626,7 +1618,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `under_writing_task_notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `under_writing_task_notes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `under_writing_task_id` bigint unsigned NOT NULL,
@@ -1654,7 +1646,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `under_writing_tasks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `under_writing_tasks` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `under_writing_id` bigint unsigned NOT NULL,
@@ -1685,7 +1677,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `under_writings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `under_writings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `prospect_id` bigint NOT NULL,
@@ -1714,7 +1706,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1742,7 +1734,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1772,7 +1764,6 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'Admin','admin@email.com','admin',NULL,'$2y$10$nouhwzYiJFPAd4valjW4JOVyAgY9fufXEc4K.o1Ob84Qh0fAMyhzC',1,NULL,'9aTp8gZscCRyAqPOaaAaC7xfioZ66wAJRR5qonC5HfuxXojEqCDOoDxL0iXq','2022-10-06 10:01:53','2022-10-06 10:01:53',NULL),(2,'Saad Nadir','saad@9ostech.com','snadir',NULL,'$2y$10$cICVOHG24hx8/qmnGppnLu0FntLSnOB3P36ujLEY8o2rx/Z47qwQO',1,NULL,NULL,'2022-10-06 10:01:53','2022-10-06 10:01:53',NULL),(3,'Areej','areej@9ostech.com','areej',NULL,'$2y$10$Uy3zmvMJ9Wx3gaxblo4kjey4yb0q46OwAToxkb7d5LSqKnGMhdYd2',2,NULL,NULL,'2022-10-06 10:01:53','2022-10-06 11:45:22',NULL),(4,'Zainab','zainab@9ostech.com','zainab',NULL,'$2y$10$sRqJKa3UdCe2oGrGrzTFq.Tljw9vhkkBbzg//g2DpM9s5pNZLOGhy',2,NULL,NULL,'2022-10-06 10:01:53','2022-10-06 11:45:40',NULL),(5,'Shanice Williams, Owner','areej@frontlinefunding.com','shanice williams,_owner796',NULL,'$2y$10$ThfPHZzFrzj/r64aMzX2quaEMFw1AmosK5Ay95rzw3N0FIQa2gBDS',3,1,NULL,'2022-10-06 12:32:51','2022-10-06 12:32:51',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1783,4 +1774,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-07 18:38:44
+-- Dump completed on 2022-10-07 16:20:12
